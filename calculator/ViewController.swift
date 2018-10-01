@@ -11,6 +11,10 @@ import Foundation
 
 class ViewController: UIViewController, SettingsViewControllerDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var from_unit: LengthUnit = LengthUnit.Yards
     var to_unit: LengthUnit = LengthUnit.Meters
     var from_unit_v: VolumeUnit = VolumeUnit.Gallons
@@ -63,6 +67,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
         self.view.addGestureRecognizer(detectTouch)
         self.metersInput.addGestureRecognizer(detectYardsBox)
         self.yardsInput.addGestureRecognizer(detectMetersBox)
+        
+        self.view.backgroundColor = BACKGROUND_COLOR
     }
 
     
